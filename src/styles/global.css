@@ -205,3 +205,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .game .g-title { font-size: clamp(1.9rem, 3.6vw, 2.7rem); inset: 6% 0 auto; }
 .game .g-hero { bottom: -58%; height: 112%; }
 #about { padding-bottom: clamp(32px, 4vw, 48px); }
+.steps p a { color: var(--blue); font-weight: 600; }
+.book-btn { justify-self: start; background: var(--sun); color: #10213A; font-weight: 700; text-decoration: none; padding: 12px 20px; border-radius: 12px; }
+.book-btn:hover { filter: brightness(1.05); }

@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 
 const year = new Date().getFullYear();
 const mailto = 'mailto:raj@zen-scale.io?subject=Project%20enquiry';
+const booking = 'https://cal.com/raj-gurung-oh1wky/intro';
 ---
 
 <Layout
@@ -26,7 +27,7 @@ const mailto = 'mailto:raj@zen-scale.io?subject=Project%20enquiry';
       <span class="pill">AI engineering studio · London</span>
       <h1>AI-powered software, built and run by <span>the engineer you talk to.</span></h1>
       <p class="lede">I build AI features, web and mobile apps, and the infrastructure behind them for startups and SMEs, then stay on to keep them running. Most recently I built an automated AI pipeline that drafts radiology reports, now live in NHS hospitals.</p>
-      <div class="ctas"><a class="btn primary" href={mailto}>Email me</a><a class="btn" href="#proof">See what I've done</a></div>
+      <div class="ctas"><a class="btn primary" href={mailto}>Email me</a><a class="btn" href={booking} target="_blank" rel="noopener">Book a free call</a></div>
       <div class="who"><span class="av" aria-hidden="true">R</span>Raj Gurung, founder. 15 years building production software.</div>
     </div>
   </div>
@@ -65,7 +66,7 @@ const mailto = 'mailto:raj@zen-scale.io?subject=Project%20enquiry';
             <figcaption><a href="https://www.linkedin.com/in/palak13/" target="_blank" rel="noopener">Palak Jain</a><span>Senior Product Manager, worked with Raj</span></figcaption>
           </figure>
         </div>
-        <p class="nudge">Want this for your product? <a href={mailto}>Email me →</a></p>
+        <p class="nudge">Want this for your product? <a href={booking} target="_blank" rel="noopener">Book a free call →</a></p>
       </div>
     </section>
 
@@ -148,12 +149,12 @@ const mailto = 'mailto:raj@zen-scale.io?subject=Project%20enquiry';
       <div class="wrap">
         <div class="head"><span class="eyebrow">04 · How it works</span><h2>How a project runs.</h2></div>
         <ol class="steps">
-          <li><h3>Talk</h3><p>Email me and we'll set up a free 30-minute call.</p></li>
+          <li><h3>Talk</h3><p><a href={booking} target="_blank" rel="noopener">Book a free 30-minute call</a>, or email me.</p></li>
           <li><h3>Scope</h3><p>A written plan with milestones and a fixed price. Projects start from £5k.</p></li>
           <li><h3>Build</h3><p>Working software every week that you can click through.</p></li>
           <li><h3>Run and support</h3><p>I deploy it, monitor it and keep improving it as you grow, from £500 a month. Same engineer, no handover.</p></li>
         </ol>
-        <p class="nudge">Want this for your product? <a href={mailto}>Email me →</a></p>
+        <p class="nudge">Want this for your product? <a href={booking} target="_blank" rel="noopener">Book a free call →</a></p>
       </div>
     </section>
 
@@ -177,6 +178,7 @@ const mailto = 'mailto:raj@zen-scale.io?subject=Project%20enquiry';
             <li>Your timeline and rough budget</li>
           </ul>
           <div class="email-row"><a class="email" id="email" href={mailto}>raj@zen-scale.io</a><button class="copy-btn" id="copy" type="button">Copy</button></div>
+          <a class="book-btn" href={booking} target="_blank" rel="noopener">Or book a free 30-minute call →</a>
           <p class="hint">I reply within one working day. Projects from £5k · ongoing support from £500 a month.</p>
         </div>
       </div>
