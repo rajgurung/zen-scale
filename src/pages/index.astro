@@ -2,42 +2,93 @@
 import Layout from '../layouts/Layout.astro';
 
 const year = new Date().getFullYear();
+const mailto = 'mailto:raj@zen-scale.io?subject=Project%20enquiry';
 ---
 
 <Layout
-  title="Zen Scale · AI-first software studio in London"
-  description="Zen Scale builds AI-powered web and mobile apps, connects products to LLMs like Claude, and runs the infrastructure behind them. Work directly with the founder, from the first call to launch and beyond."
+  title="Zen Scale · AI engineering studio in London"
+  description="AI features, web and mobile apps, and the infrastructure behind them, built and run by Raj Gurung, an engineer who took generative AI live in four NHS hospitals."
 >
   <a class="skip" href="#main">Skip to content</a>
-  <div class="band" data-scope>
+  <header class="top">
+    <div class="wrap">
+      <a class="mark" href="#top"><b aria-hidden="true"></b>Zen Scale</a>
+      <nav aria-label="Main">
+        <a href="#proof">Proof</a><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="band hero" id="top" data-scope>
     <div class="sun pl" style="--d:40" aria-hidden="true"></div>
-    <header>
-      <div class="wrap">
-        <a class="mark" href="#top"><b aria-hidden="true"></b>Zen Scale</a>
-        <nav aria-label="Main"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-      </div>
-    </header>
-    <div class="hero" id="top">
-      <div class="wrap">
-        <span class="pill">AI-first software studio · London</span>
-        <h1>Software that's easy to use, built by the person <span>you talk to.</span></h1>
-        <p class="lede">Zen Scale builds AI-powered web and mobile apps, connects your product to LLMs like Claude, and sets up and runs the infrastructure behind it. You work directly with the founder from the first call to launch day, and we stay with you as you grow.</p>
-        <div class="ctas"><a class="btn primary" href="#contact">Start a project</a><a class="btn" href="#work">See our work</a></div>
-        <div class="who"><span class="av" aria-hidden="true">R</span>Raj Gurung, founder. 15+ years shipping production software.</div>
-      </div>
+    <div class="wrap">
+      <span class="pill">AI engineering studio · London</span>
+      <h1>AI-powered software, built and run by <span>the engineer you talk to.</span></h1>
+      <p class="lede">I build AI features, web and mobile apps, and the infrastructure behind them, then stay on to keep them running. Most recently I took generative AI live in four NHS hospitals in five months.</p>
+      <div class="ctas"><a class="btn primary" href={mailto}>Email Raj</a><a class="btn" href="#proof">See what I've done</a></div>
+      <div class="who"><span class="av" aria-hidden="true">R</span>Raj Gurung, founder. 15 years building production software.</div>
     </div>
   </div>
 
   <main id="main">
-    <section id="work">
+    <section id="proof" class="sec">
       <div class="wrap">
-        <div class="head"><h2>Things we've built and shipped.</h2><p>Before we build for clients, we build for ourselves. Each of these is designed, engineered and run end to end by Zen Scale, and you can use them today.</p></div>
+        <div class="head"><span class="eyebrow">01 · Proof</span><h2>Hard problems I've already solved.</h2><p>Before Zen Scale I was a technical lead at Hexarad and Indeed.</p></div>
+        <div class="cases">
+          <article class="case">
+            <b class="fig">4 NHS hospitals</b>
+            <h3>Generative AI in live NHS care, in five months.</h3>
+            <p>Led a vision-language model from architecture to production. It drafts radiology reports for about 1,000 CT scans a weekday, on AWS infrastructure I built with alerting tuned for clinical use.</p>
+            <span class="case-meta">Hexarad · Technical lead</span>
+          </article>
+          <article class="case">
+            <b class="fig">60s → &lt;1s</b>
+            <h3>From over a minute to under a second.</h3>
+            <p>Reworked the slowest core APIs on a hiring platform and led the integration of an ML decisioning model. Also led the enterprise rollout behind multi-million-pound contracts.</p>
+            <span class="case-meta">Indeed · Technical lead</span>
+          </article>
+          <article class="case">
+            <b class="fig">12M+ requests a week</b>
+            <h3>From early hire to acquisition.</h3>
+            <p>Joined Syft early and led its workforce, employer and agency products. Kept the platform stable as it scaled and through its acquisition by Indeed.</p>
+            <span class="case-meta">Syft → Indeed · Senior engineer</span>
+          </article>
+        </div>
+        <div class="quote-grid">
+          <figure class="quote">
+            <blockquote>Raj is the rare engineer who is as aware of the human element of software development as he is the technical. … I wouldn't hesitate to work with him again.</blockquote>
+            <figcaption><a href="https://www.linkedin.com/in/jonathan-e-barrett/" target="_blank" rel="noopener">Jonathan Barrett</a><span>Engineering Manager at Indeed, managed Raj</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>An exceptional engineering partner: proactive, responsive, and always willing to jump in to help solve problems. He brings clarity to complex situations.</blockquote>
+            <figcaption><a href="https://www.linkedin.com/in/palak13/" target="_blank" rel="noopener">Palak Jain</a><span>Senior Product Manager, worked with Raj</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="sec tint">
+      <div class="wrap">
+        <div class="head"><span class="eyebrow">02 · Services</span><h2>What I can do for you.</h2><p>From the first idea to running in production.</p></div>
+        <div class="tiles">
+          <div class="tile"><h3>AI in your product</h3><p>Add Claude or OpenAI to your product: smart suggestions, document extraction, search over your own content, and agents that take real actions through MCP. Tested so the answers stay reliable.</p><small>Claude · OpenAI · MCP · evals</small></div>
+          <div class="tile"><h3>Web and mobile apps</h3><p>Full products from database to App Store. Customer portals, internal tools, SaaS, and iPhone and Android apps from one codebase.</p><small>Rails · Next.js · React Native</small></div>
+          <div class="tile"><h3>Infrastructure that stays up</h3><p>I set up and run it all: cloud, databases, deploys, monitoring, backups and security. Clear uptime targets and alerts, so problems get fixed before your users notice.</p><small>AWS · Terraform · Cloudflare</small></div>
+          <div class="tile"><h3>A senior engineer in your team</h3><p>Architecture, hard bugs, performance, and getting stuck projects moving. I can also help your team adopt Claude Code and AI coding agents safely.</p><small>Rails · TypeScript · Go · Claude Code</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="sec">
+      <div class="wrap">
+        <div class="head"><span class="eyebrow">03 · Work</span><h2>Products I've built and run.</h2><p>Each one is calm to use: a few clear screens, plain labels, and one obvious next step. You can try them today.</p></div>
         <article class="product" data-scope>
           <div class="copy">
             <span class="status">● Live on web · iOS coming soon</span>
             <h3>Softly. Life admin, handled softly.</h3>
-            <p>A task manager for the things life keeps throwing at you: bills, appointments, renewals. Type or say a task in your own words and AI turns it into a reminder. It also suggests what's due next, so you don't have to remember.</p>
-            <div class="chips"><span>Claude</span><span>Voice input</span><span>Rails 8.1</span><span>React Native</span><span>Next.js 16</span><span>Railway</span><span>Cloudflare</span></div>
+            <p>A task manager for bills, appointments and renewals. Type or say a task in your own words and AI turns it into a reminder, then suggests what's due next.</p>
+            <div class="chips"><span>Claude</span><span>Voice input</span><span>React Native</span></div>
             <a class="btn" href="https://mysoftly.app" target="_blank" rel="noopener">Visit mysoftly.app ↗</a>
           </div>
           <div class="stage">
@@ -50,196 +101,66 @@ const year = new Date().getFullYear();
         <div class="more">
           <article class="mini" data-scope>
             <div class="shot">
-              <div class="pl" style="--d:8"><img src="/images/collab.jpg" width="1100" height="687" loading="lazy" alt="Collab task board with swimlanes for launch, mobile app and brand refresh projects"></div>
-              <div class="bubble pl" style="--d:26" aria-hidden="true"><i>M</i><span>Draft is ready. <b>@raj</b> can you take a look?</span></div>
+              <div class="pl" style="--d:8"><img src="/images/collab.jpg" width="1100" height="687" loading="lazy" alt="Collab task board with swimlanes for three projects"></div>
+              <div class="bubble pl" style="--d:26" aria-hidden="true"><i>M</i><span>Draft is ready. <b>@raj</b> can you look?</span></div>
             </div>
             <div class="mini-copy">
-              <span class="status">● Live</span>
               <h3>Collab</h3>
-              <p>One workspace for small teams. Roadmap, task board, meeting notes and live chat in one place. Connect Claude and it can plan and update tasks for you.</p>
-              <div class="chips"><span>Rust</span><span>Loco</span><span>HTMX</span><span>Postgres</span><span>MCP</span></div>
+              <p>One workspace for small teams: roadmap, tasks, notes and chat. Connect Claude and it plans and updates tasks for you.</p>
+              <div class="chips"><span>Rust</span><span>HTMX</span><span>MCP</span></div>
               <a class="go" href="https://collab.rajgurung.me" target="_blank" rel="noopener">Try Collab ↗</a>
             </div>
           </article>
           <article class="mini" data-scope>
             <div class="shot">
               <div class="pl" style="--d:8"><img src="/images/compress.jpg" width="1100" height="733" loading="lazy" alt="Compress home screen: make PDFs and JPGs smaller, nothing is uploaded"></div>
-              <div class="bubble lock pl" style="--d:26" aria-hidden="true"><i>✓</i><span>Your files stay on your device</span></div>
+              <div class="bubble lock pl" style="--d:26" aria-hidden="true"><i>✓</i><span>Files stay on your device</span></div>
             </div>
             <div class="mini-copy">
-              <span class="status">● Live · Open source</span>
               <h3>Compress</h3>
-              <p>Make PDFs and JPGs smaller right in your browser. Files never leave your device. Compression runs locally in WebAssembly and works offline.</p>
-              <div class="chips"><span>WebAssembly</span><span>Ghostscript</span><span>mozjpeg</span><span>Cloudflare</span></div>
+              <p>Make PDFs and JPGs smaller right in your browser. Files never leave your device, and it works offline.</p>
+              <div class="chips"><span>WebAssembly</span><span>Offline</span><span>Open source</span></div>
               <a class="go" href="https://compress.rajgurung.me" target="_blank" rel="noopener">Try Compress ↗</a>
             </div>
           </article>
-        </div>
-        <article class="game" data-scope>
-          <div class="g-stage">
-            <div class="g-glow" aria-hidden="true"></div>
-            <div class="g-title pl" style="--d:6" aria-hidden="true">Warden<br>Zero</div>
-            <div class="g-enemy left pl" style="--d:14" aria-hidden="true"><img src="/images/grunt.webp" width="256" height="256" loading="lazy" alt=""></div>
-            <div class="g-enemy right pl" style="--d:14" aria-hidden="true"><img src="/images/runner.webp" width="256" height="256" loading="lazy" alt="" style="transform:scaleX(-1)"></div>
-            <div class="g-hero pl" style="--d:26"><img src="/images/warden.webp" width="900" height="1196" loading="lazy" alt="The Warden, an armoured soldier holding a rifle"></div>
-            <div class="g-fade" aria-hidden="true"></div>
-          </div>
-          <div class="g-copy">
-            <span class="g-status">● Playable in your browser · Beta</span>
-            <h3>Warden Zero</h3>
-            <p>A chaotic arena shooter. Survive eight waves, level up, and bring down the Colossus. Rebuilt three times, from Phaser to Babylon.js to Unity 6, to push the graphics further each time.</p>
-            <div class="chips"><span>Unity 6</span><span>C#</span><span>WebGL</span><span>Touch controls</span></div>
-            <a class="g-play" href="https://rajgurung.me/game" target="_blank" rel="noopener">▶ Play Warden Zero</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="calm">
-      <div class="wrap">
-        <div class="head"><h2>Why "Zen"?</h2><p>Everything we build should feel calm to use. Here's what that means in practice.</p></div>
-        <div class="calm-grid">
-          <div class="calm-item">
-            <h3>Easy to find your way</h3>
-            <p>A few clear screens with plain labels. You always know where you are and how to get back.</p>
-            <small>Collab fits a whole team workspace into four tabs on your phone.</small>
-          </div>
-          <div class="calm-item">
-            <h3>Easy on the eyes</h3>
-            <p>Plenty of space, soft colours, and light and dark modes. No clutter and no pop-ups fighting for your attention.</p>
-            <small>Every app follows your phone's light or dark setting.</small>
-          </div>
-          <div class="calm-item">
-            <h3>Easy to use</h3>
-            <p>One obvious next step on every screen. The app does the remembering, so you don't have to.</p>
-            <small>Compress is one screen and one button. Softly suggests what's due next.</small>
-          </div>
+          <article class="mini game" data-scope>
+            <div class="g-stage">
+              <div class="g-glow" aria-hidden="true"></div>
+              <div class="g-title pl" style="--d:6" aria-hidden="true">Warden<br>Zero</div>
+              <div class="g-enemy left pl" style="--d:14" aria-hidden="true"><img src="/images/grunt.webp" width="256" height="256" loading="lazy" alt=""></div>
+              <div class="g-enemy right pl" style="--d:14" aria-hidden="true"><img src="/images/runner.webp" width="256" height="256" loading="lazy" alt="" style="transform:scaleX(-1)"></div>
+              <div class="g-hero pl" style="--d:26"><img src="/images/warden.webp" width="900" height="1196" loading="lazy" alt="The Warden, an armoured soldier holding a rifle"></div>
+              <div class="g-fade" aria-hidden="true"></div>
+            </div>
+            <div class="mini-copy">
+              <h3>Warden Zero</h3>
+              <p>An arena shooter that runs in your browser. Survive eight waves and bring down the Colossus.</p>
+              <div class="chips"><span>Unity 6</span><span>WebGL</span><span>Touch</span></div>
+              <a class="go" href="https://rajgurung.me/game" target="_blank" rel="noopener">Play it ↗</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="services">
+    <section class="sec tint">
       <div class="wrap">
-        <div class="head"><h2>What we can do for you.</h2><p>AI first, from the idea to running in production.</p></div>
-        <div class="tiles">
-          <div class="tile"><h3>AI features and LLMs</h3><p>Add Claude or OpenAI to your product. Smart suggestions, document and data extraction, search over your own content, and chat that knows your business. Tested so the answers stay reliable.</p><small>Claude · OpenAI · embeddings · evals</small></div>
-          <div class="tile"><h3>AI agents and MCP</h3><p>Agents that take real actions with tool calling. MCP servers that let Claude and other assistants work safely with your app and data.</p><small>MCP · tool calling · Agent SDK</small></div>
-          <div class="tile"><h3>AI-assisted engineering</h3><p>Help your team adopt Claude Code and AI coding agents, with the reviews, tests and guardrails that keep quality high.</p><small>Claude Code · AI code review · CI</small></div>
-          <div class="tile"><h3>Web and mobile apps</h3><p>Full products from database to App Store. Customer portals, internal tools, SaaS, and iPhone and Android apps from one codebase.</p><small>Rails · Next.js · React Native · Expo</small></div>
-          <div class="tile"><h3>Infrastructure and DevOps</h3><p>We set up and run it all: cloud, databases, deploys, monitoring, backups and security. You don't need a separate ops team, and costs stay in check.</p><small>AWS · Terraform · Cloudflare · Railway</small></div>
-          <div class="tile"><h3>Contract engineering</h3><p>A senior engineer embedded in your team. Architecture, hard bugs, performance, and getting stuck projects moving.</p><small>Rails · TypeScript · Go · Elixir</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="head"><h2>From first call to launch.</h2></div>
+        <div class="head"><span class="eyebrow">04 · How it works</span><h2>How a project runs.</h2></div>
         <ol class="steps">
           <li><h3>Talk</h3><p>A free 30-minute call about what you need.</p></li>
-          <li><h3>Scope</h3><p>A short written plan with milestones and a clear price.</p></li>
+          <li><h3>Scope</h3><p>A written plan with milestones and a fixed price.</p></li>
           <li><h3>Build</h3><p>Working software every week that you can click through.</p></li>
-          <li><h3>Launch and grow</h3><p>We deploy it, watch over it, and keep improving it as you grow.</p></li>
+          <li><h3>Run and support</h3><p>I deploy it, monitor it and keep improving it as you grow. Same engineer, no handover.</p></li>
         </ol>
       </div>
     </section>
 
-    <section class="scale">
-      <div class="wrap">
-        <div class="head"><h2>Why "Scale"?</h2><p>Launching is the start. When your users go from hundreds to millions, we're still here, and the software keeps up.</p></div>
-        <div class="calm-grid">
-          <div class="calm-item">
-            <h3>Ready to grow</h3>
-            <p>Built from day one to handle ten times the traffic. Caching, queues and databases that scale when you need them, without a rewrite.</p>
-          </div>
-          <div class="calm-item">
-            <h3>Stays up</h3>
-            <p>Clear uptime targets, monitoring and alerts, safe deploys with automatic rollback, and backups that are actually tested.</p>
-          </div>
-          <div class="calm-item">
-            <h3>Here for the long run</h3>
-            <p>The engineer who built it keeps looking after it. Ongoing support, regular check-ins, and a partner who knows your system inside out.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="track" id="track">
-      <div class="wrap">
-        <div class="head"><h2>15 years of doing this for real.</h2><p>Before Zen Scale, Raj spent 15 years leading teams and building systems that couldn't go down. Healthcare, hiring, fraud and housing. Here are a few of the hard ones.</p></div>
-        <div class="stats">
-          <div><b>15 yrs</b><span>building and running production systems</span></div>
-          <div><b>12M+</b><span>requests a week on systems Raj helped run</span></div>
-          <div><b>4</b><span>NHS hospitals running AI Raj took live</span></div>
-          <div><b>10x</b><span>faster real-time fraud checks</span></div>
-        </div>
-        <div class="cases">
-          <article class="case">
-            <span class="case-meta">Hexarad · Technical lead</span>
-            <h3>Generative AI in live NHS care, in five months.</h3>
-            <p>Led a vision-language model from architecture to production, drafting radiology reports for about 1,000 CT scans a weekday across four NHS hospitals. Worked directly with the COO, CTO and clinical AI lead, and with the CTOs of the AI partners.</p>
-          </article>
-          <article class="case">
-            <span class="case-meta">Hexarad · Infrastructure</span>
-            <h3>Infrastructure built for clinical uptime.</h3>
-            <p>AWS and Terraform, a service mesh across the cloud and two datacentres, and SLO alerting that replaced 33 noisy alerts. An 8.5-hour supplier outage became a set of permanent safeguards.</p>
-          </article>
-          <article class="case">
-            <span class="case-meta">Indeed · Technical lead</span>
-            <h3>An enterprise rollout behind multi-million-pound contracts.</h3>
-            <p>Led the Service Excellence initiative that onboarded a major enterprise client in phases. Owned the core job offering and agency systems, including the integration of an ML decisioning model.</p>
-          </article>
-          <article class="case">
-            <span class="case-meta">Indeed · Performance</span>
-            <h3>From over a minute to under a second.</h3>
-            <p>Reworked the slowest core APIs on a platform serving 2M+ requests a day. Set up the SLOs, alerts and dashboards the team used to respond to incidents fast.</p>
-          </article>
-          <article class="case">
-            <span class="case-meta">Syft · Early engineer</span>
-            <h3>From early hire to acquisition by Indeed.</h3>
-            <p>Led the workforce management, multi-tenant employer and agency products, and real-time job matching. Kept the platform stable as it scaled and through the acquisition.</p>
-          </article>
-          <article class="case lead">
-            <span class="case-meta">Across every team</span>
-            <h3>Leading people, not just code.</h3>
-            <ul>
-              <li>Mentored engineers from junior to senior, leading to multiple promotions</li>
-              <li>Interviewed senior and staff engineer candidates</li>
-              <li>Led a full ASP.NET to Rails migration</li>
-              <li>Wrote a 106-document knowledge hub for an async team</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="wrap">
-        <h2>Hi, I'm Raj.</h2>
+    <section id="about" class="sec">
+      <div class="wrap about">
+        <div class="head"><span class="eyebrow">05 · About</span><h2>Hi, I'm Raj.</h2></div>
         <div class="letter">
-          <p>I started Zen Scale to build software the way I like to work: carefully, in plain English, and without the layers that slow projects down.</p>
-          <p>I've spent 15+ years building systems that have to stay up and stay correct under real load. Today most of my work is AI: shipping LLM features to production, building MCP connectors, and engineering with Claude every day, with the reviews and tests that keep it trustworthy.</p>
-          <div class="sectors"><span>Gaming</span><span>Housing</span><span>Fraud detection</span><span>Workforce platforms</span><span>Consumer apps</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="quotes">
-      <div class="wrap">
-        <div class="head"><h2>From people who've worked with Raj.</h2></div>
-        <div class="quote-grid">
-          <figure class="quote">
-            <blockquote>Raj is the rare engineer who is as aware of the human element of software development as he is the technical. … Raj embodies the Tech Lead attitude, and I wouldn't hesitate to work with him again.</blockquote>
-            <figcaption><a href="https://www.linkedin.com/in/jonathan-e-barrett/" target="_blank" rel="noopener">Jonathan Barrett</a><span>Software Engineering Manager · Indeed</span></figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote>He's one of those engineers who just makes everything better. … He didn't just code features, he really understood the problems we were solving.</blockquote>
-            <figcaption><a href="https://www.linkedin.com/in/davidslv/" target="_blank" rel="noopener">David Silva</a><span>Senior Backend Engineer · Indeed</span></figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote>Raj is an exceptional engineering partner: proactive, responsive, and always willing to jump in to help solve problems. He brings clarity to complex situations, asks the right questions, and ensures everyone is aligned before moving forward.</blockquote>
-            <figcaption><a href="https://www.linkedin.com/in/palak13/" target="_blank" rel="noopener">Palak Jain</a><span>Senior Product Manager</span></figcaption>
-          </figure>
+          <p>I started Zen Scale to build software the way I like to work: carefully, in plain English, with no layers between you and the engineer.</p>
+          <p>Most of my work today is AI: LLM features in production, MCP connectors, and engineering with Claude every day, with the reviews and tests that keep it trustworthy. You talk to me from the first call, and I'm the one who looks after your system afterwards.</p>
         </div>
       </div>
     </section>
@@ -247,9 +168,14 @@ const year = new Date().getFullYear();
     <section class="contact" id="contact">
       <div class="wrap">
         <div class="box">
-          <h2>Have something in mind? Let's talk.</h2>
-          <div class="email-row"><a class="email" id="email" href="mailto:raj@zen-scale.io">raj@zen-scale.io</a><button class="copy-btn" id="copy" type="button">Copy</button></div>
-          <p class="hint">Tell us a little about the project and your timeline. We reply within two working days.</p>
+          <h2>Tell me what you're building.</h2>
+          <ul class="prompts">
+            <li>What your product does</li>
+            <li>What you need: AI, an app, infrastructure or ongoing support</li>
+            <li>Your timeline</li>
+          </ul>
+          <div class="email-row"><a class="email" id="email" href={mailto}>raj@zen-scale.io</a><button class="copy-btn" id="copy" type="button">Copy</button></div>
+          <p class="hint">I reply within two working days.</p>
         </div>
       </div>
     </section>
@@ -276,6 +202,19 @@ const year = new Date().getFullYear();
     });
     el.addEventListener('pointerleave', function () { el.style.setProperty('--px', 0); el.style.setProperty('--py', 0); });
   });
+
+  // Highlight the nav link for the section in view.
+  var links = {};
+  document.querySelectorAll('nav a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      Object.values(links).forEach(function (a) { a.removeAttribute('aria-current'); });
+      if (links[e.target.id]) links[e.target.id].setAttribute('aria-current', 'true');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
+
   document.getElementById('copy').addEventListener('click', function () {
     var b = this;
     function sel() { var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
