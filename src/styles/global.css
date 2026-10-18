@@ -74,7 +74,7 @@ nav .nav-cta:hover, nav .nav-cta[aria-current] { background: var(--blue); }
 .case h3 { font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
 .case p { color: var(--muted); font-size: 1rem; }
 .case-meta { font-weight: 600; font-size: 0.85rem; padding-top: 12px; border-top: 1px solid var(--line); }
-.quote-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 40px; }
+.quote-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 40px; }
 .quote { margin: 0; display: grid; gap: 14px; align-content: start; }
 .quote blockquote { margin: 0; font-size: 1.1rem; line-height: 1.55; }
 .quote blockquote::before { content: "\201C"; display: block; font-family: var(--display); font-weight: 900; font-size: 3rem; line-height: .6; color: var(--sun); margin-bottom: 8px; }
@@ -180,7 +180,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
-  .product, .about { grid-template-columns: minmax(0, 1fr); }
+  .product, .about, .quote-grid { grid-template-columns: minmax(0, 1fr); }
+  .quote-grid { gap: 24px; }
   .cases { grid-template-columns: minmax(0, 1fr); }
   .phone { max-width: 230px; }
 }
