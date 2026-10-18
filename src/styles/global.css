@@ -195,3 +195,13 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 @media (max-width: 480px) {
   .steps { grid-template-columns: minmax(0, 1fr); gap: 20px; }
 }
+
+.nudge { margin-top: 32px; font-weight: 500; }
+.nudge a { color: var(--blue); font-weight: 700; text-decoration: none; margin-left: 4px; }
+.nudge a:hover { text-decoration: underline; }
+
+/* Second design pass */
+.product { padding: clamp(24px, 4vw, 40px); }
+.game .g-title { font-size: clamp(1.9rem, 3.6vw, 2.7rem); inset: 6% 0 auto; }
+.game .g-hero { bottom: -58%; height: 112%; }
+#about { padding-bottom: clamp(32px, 4vw, 48px); }
