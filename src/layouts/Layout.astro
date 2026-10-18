@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og.png', Astro.site);
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#DCEBFF" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#13243D" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zen Scale" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;700;900&family=Onest:wght@400;500;600&display=swap" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Zen Scale Ltd',
+      url: 'https://zen-scale.io',
+      email: 'raj@zen-scale.io',
+      founder: { '@type': 'Person', name: 'Raj Gurung', url: 'https://rajgurung.me' },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '71–75 Shelton Street, Covent Garden',
+        addressLocality: 'London',
+        postalCode: 'WC2H 9JQ',
+        addressCountry: 'GB',
+      },
+    })} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
