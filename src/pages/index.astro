@@ -210,14 +210,22 @@ const booking = 'https://cal.com/zenscale/intro';
   // Highlight the nav link for the section in view.
   var links = {};
   document.querySelectorAll('nav a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
-  var spy = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      Object.values(links).forEach(function (a) { a.removeAttribute('aria-current'); });
-      if (links[e.target.id]) links[e.target.id].setAttribute('aria-current', 'true');
+  // The hero and sections without a nav link clear the highlight.
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section'));
+  var ticking = false;
+  function spy() {
+    ticking = false;
+    var current = null;
+    sections.forEach(function (s) { if (s.getBoundingClientRect().top <= innerHeight * 0.4) current = s; });
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) current = sections[sections.length - 1];
+    Object.keys(links).forEach(function (id) {
+      if (current && current.id === id) links[id].setAttribute('aria-current', 'true');
+      else links[id].removeAttribute('aria-current');
     });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
+  }
+  addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });
+  addEventListener('resize', spy);
+  spy();
 
   document.getElementById('copy').addEventListener('click', function () {
     var b = this;
