@@ -20,7 +20,7 @@
   --t1: #2A2414; --t2: #142A20; --t3: #221C36; --t4: #2E1B18; color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html { scroll-padding-top: 72px; }
+html { scroll-padding-top: 64px; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.05rem; line-height: 1.6; }
 .wrap { max-width: 1100px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
