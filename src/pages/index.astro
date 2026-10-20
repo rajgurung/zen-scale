@@ -78,10 +78,43 @@ const booking = 'https://cal.com/zenscale/intro';
       <div class="wrap">
         <div class="head"><span class="eyebrow">02 · Services</span><h2>What I can do for you.</h2><p>From the first idea to running in production.</p></div>
         <div class="tiles">
-          <div class="tile"><h3>AI in your product</h3><p>Add Claude or OpenAI to your product: smart suggestions, document extraction, search over your own content, and agents that take real actions through MCP. Tested so the answers stay reliable.</p><small>Claude · OpenAI · MCP · evals</small></div>
-          <div class="tile"><h3>Web and mobile apps</h3><p>Full products from database to App Store. Customer portals, internal tools, SaaS, and iPhone and Android apps from one codebase.</p><small>Rails · Next.js · React Native</small></div>
-          <div class="tile"><h3>Infrastructure that stays up</h3><p>I set up and run it all: cloud, databases, deploys, monitoring, backups and security. Clear uptime targets and alerts, so problems get fixed before your users notice.</p><small>AWS · Terraform · Cloudflare</small></div>
-          <div class="tile"><h3>A senior engineer in your team</h3><p>Architecture, hard bugs, performance, and getting stuck projects moving. I can also help your team adopt Claude Code and AI coding agents safely.</p><small>Rails · TypeScript · Go · Claude Code</small></div>
+          <div class="tile">
+            <div class="art art-ai" role="img" aria-label="A chat where the AI reads a contract, answers, and creates a task">
+              <div class="ask">Pull the renewal date from this contract</div>
+              <div class="reply"><span class="spark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10213A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg></span><div><span>Renews on <b>1 March</b>, 60 days' notice.</span><i class="bar" style="width:70%"></i></div></div>
+              <div class="ai-chips"><span class="chip ok">✓ Task created via MCP</span><span class="chip">Eval: passed</span></div>
+            </div>
+            <h3>AI in your product</h3><p>Add Claude or OpenAI to your product: smart suggestions, document extraction, search over your own content, and agents that take real actions through MCP. Tested so the answers stay reliable.</p><small>Claude · OpenAI · MCP · evals</small></div>
+          <div class="tile">
+            <div class="art art-apps" role="img" aria-label="The same product as a web app in a browser and as a phone app">
+              <div class="browser">
+                <div class="chrome"><i class="dot" style="background:#FF8A7A"></i><i class="dot" style="background:#FFC53D"></i><i class="dot" style="background:#6FD08F"></i><i class="url"></i></div>
+                <div class="page">
+                  <div class="side"><i class="bar" style="width:80%"></i><i class="bar"></i><i class="bar" style="width:70%"></i><i class="bar" style="width:85%"></i></div>
+                  <div class="content"><i class="heading"></i><div class="cards"><i></i><i></i><i></i></div><i class="bar"></i><i class="bar" style="width:80%"></i></div>
+                </div>
+              </div>
+              <div class="mini-phone"><div class="screen"><i class="heading"></i><i class="mini-hero"></i><i class="bar"></i><i class="bar" style="width:75%"></i><i class="cta"></i></div></div>
+            </div>
+            <h3>Web and mobile apps</h3><p>Full products from database to App Store. Customer portals, internal tools, SaaS, and iPhone and Android apps from one codebase.</p><small>Rails · Next.js · React Native</small></div>
+          <div class="tile">
+            <div class="art art-infra" role="img" aria-label="A status panel showing web, database, backups and deploys all healthy, with response time steady below the alert line">
+              <div class="svc-status">
+                <div><i class="dot up"></i><span>Web</span><span class="good">Healthy</span></div>
+                <div><i class="dot up"></i><span>Database</span><span class="good">Healthy</span></div>
+                <div><i class="dot up"></i><span>Backups</span><span class="meta">03:00 ✓</span></div>
+                <div><i class="dot live"></i><span>Deploy</span><span class="meta">Live</span></div>
+              </div>
+              <div class="chart"><span>Response time · 24h</span><svg viewBox="0 0 200 80" aria-hidden="true"><path class="area" d="M0 58 L14 54 L28 56 L42 50 L56 52 L70 47 L84 49 L98 44 L112 46 L126 42 L140 44 L154 40 L168 42 L182 38 L200 40 L200 80 L0 80 Z"/><path class="line" d="M0 58 L14 54 L28 56 L42 50 L56 52 L70 47 L84 49 L98 44 L112 46 L126 42 L140 44 L154 40 L168 42 L182 38 L200 40"/><line class="alert" x1="0" y1="22" x2="200" y2="22"/><text x="200" y="16" text-anchor="end">alert line</text></svg></div>
+            </div>
+            <h3>Infrastructure that stays up</h3><p>I set up and run it all: cloud, databases, deploys, monitoring, backups and security. Clear uptime targets and alerts, so problems get fixed before your users notice.</p><small>AWS · Terraform · Cloudflare</small></div>
+          <div class="tile">
+            <div class="art art-pr" role="img" aria-label="A pull request moving a slow query into the database, approved by the team">
+              <div class="pr-head"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M18 15.5V10a3 3 0 0 0-3-3h-4M13 4.5 10.5 7 13 9.5"/></svg><b>Move slow report query into Postgres</b><span class="add">+12</span><span class="del">−48</span></div>
+              <div class="diff"><div class="minus">− rows.select {'{'} |r| r.shift.open? {'}'}</div><div class="plus">+ Shift.open.where(agency_id: id)</div></div>
+              <div class="review"><span class="faces"><i>R</i><i></i><i></i></span><span>Your team reviewed</span><span class="chip ok">Approved</span></div>
+            </div>
+            <h3>A senior engineer in your team</h3><p>Architecture, hard bugs, performance, and getting stuck projects moving. I can also help your team adopt Claude Code and AI coding agents safely.</p><small>Rails · TypeScript · Go · Claude Code</small></div>
         </div>
       </div>
     </section>
