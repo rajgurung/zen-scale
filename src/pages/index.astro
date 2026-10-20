@@ -217,11 +217,25 @@ const booking = 'https://cal.com/zenscale/intro';
   // The hero and sections without a nav link clear the highlight.
   var sections = Array.prototype.slice.call(document.querySelectorAll('main section'));
   var ticking = false;
+  // A clicked link stays highlighted until the visitor scrolls themselves.
+  // Near the page bottom a short section can't reach the top, so position alone would pick the wrong one.
+  var pinned = null;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    pinned = links[id] ? document.getElementById(id) : null;
+    spy();
+  });
+  ['wheel', 'touchstart', 'keydown'].forEach(function (e) {
+    addEventListener(e, function () { pinned = null; }, { passive: true });
+  });
   function spy() {
     ticking = false;
     var current = null;
     sections.forEach(function (s) { if (s.getBoundingClientRect().top <= innerHeight * 0.4) current = s; });
     if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) current = sections[sections.length - 1];
+    if (pinned) current = pinned;
     Object.keys(links).forEach(function (id) {
       if (current && current.id === id) links[id].setAttribute('aria-current', 'true');
       else links[id].removeAttribute('aria-current');
