@@ -111,7 +111,7 @@ const booking = 'https://cal.com/zenscale/intro';
           <div class="tile">
             <div class="art art-pr" role="img" aria-label="A pull request moving a slow query into the database, approved by the team">
               <div class="pr-head"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M18 15.5V10a3 3 0 0 0-3-3h-4M13 4.5 10.5 7 13 9.5"/></svg><b>Move slow report query into Postgres</b><span class="add">+12</span><span class="del">−48</span></div>
-              <div class="diff"><div class="minus">− rows.select {'{'} |r| r.shift.open? {'}'}</div><div class="plus">+ Shift.open.where(agency_id: id)</div></div>
+              <div class="diff"><div class="minus">− orders.select {'{'} |o| o.paid? {'}'}</div><div class="plus">+ Order.paid.where(account_id: id)</div></div>
               <div class="review"><span class="faces"><i>R</i><i></i><i></i></span><span>Your team reviewed</span><span class="chip ok">Approved</span></div>
             </div>
             <h3>A senior engineer in your team</h3><p>Architecture, hard bugs, performance, and getting stuck projects moving. I can also help your team adopt Claude Code and AI coding agents safely.</p><small>Rails · TypeScript · Go · Claude Code</small></div>
