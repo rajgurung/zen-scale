@@ -250,5 +250,51 @@ const booking = 'https://cal.com/zenscale/intro';
     function sel() { var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
     try { navigator.clipboard.writeText('raj@zen-scale.io').then(function () { b.textContent = 'Copied'; }, sel); } catch (e) { sel(); }
   });
+
+  // Booking links open Cal.com in a pop-up. The embed script loads only when someone shows
+  // intent (hover, focus, tap), so other visitors never contact Cal.com. If the script
+  // fails, the link goes to cal.com as before.
+  var calLink = 'zenscale/intro';
+  var calState = 'idle';
+  var calPending = null;
+  function loadCal() {
+    if (calState !== 'idle') return;
+    calState = 'loading';
+    // Cal.com's queue stub: calls made before embed.js loads are replayed once it does.
+    window.Cal = function () {
+      var cal = window.Cal, ar = arguments;
+      if (ar[0] === 'init') {
+        var api = function () { api.q.push(arguments); };
+        api.q = [];
+        cal.ns[ar[1]] = cal.ns[ar[1]] || api;
+        cal.ns[ar[1]].q.push(ar);
+        cal.q.push(['initNamespace', ar[1]]);
+        return;
+      }
+      cal.q.push(ar);
+    };
+    Cal.ns = {}; Cal.q = []; Cal.loaded = true;
+    Cal('init', 'intro', { origin: 'https://cal.com' });
+    var dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    Cal.ns.intro('ui', { theme: dark ? 'dark' : 'light', cssVarsPerTheme: { light: { 'cal-brand': '#2B6BE6' }, dark: { 'cal-brand': '#7FAAFF' } }, layout: 'month_view' });
+    var s = document.createElement('script');
+    s.src = 'https://app.cal.com/embed/embed.js';
+    s.onload = function () { calState = 'ready'; calPending = null; };
+    s.onerror = function () {
+      calState = 'failed';
+      if (calPending) location.href = calPending;
+    };
+    document.head.appendChild(s);
+  }
+  document.querySelectorAll('a[href="https://cal.com/' + calLink + '"]').forEach(function (a) {
+    ['pointerenter', 'focus', 'touchstart'].forEach(function (e) { a.addEventListener(e, loadCal, { passive: true }); });
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0 || calState === 'failed') return;
+      e.preventDefault();
+      loadCal();
+      if (calState === 'loading') calPending = a.href;
+      Cal.ns.intro('modal', { calLink: calLink, config: { layout: 'month_view' } });
+    });
+  });
   </script>
 </Layout>
