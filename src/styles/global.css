@@ -186,11 +186,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   .phone { max-width: 230px; }
 }
 @media (max-width: 760px) {
+  nav a:not(.nav-cta) { display: none; }
   .tiles, .quote-grid { grid-template-columns: minmax(0, 1fr); }
   .quote-grid { gap: 24px; }
 }
 @media (max-width: 640px) {
-  nav a:not(.nav-cta) { display: none; }
   .more { grid-template-columns: minmax(0, 1fr); }
   .sun { width: 200px; height: 200px; right: -80px; top: -90px; }
 }
